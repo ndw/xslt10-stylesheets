@@ -14,7 +14,6 @@ zip-ns: zip
 	  docbook-$(DISTRO)-$(ZIPVER) \
 	  docbook-$(DISTRO)-ns-$(ZIPVER)); 
 
-
 # Run xslt on xsl/webhelp/docsrc/readme.xml
 	$(XSLT) \
 	$(TMP)/docbook-$(DISTRO)-$(ZIPVER)/webhelp/docsrc/readme.xml \
@@ -34,14 +33,6 @@ zip-ns: zip
 	  $(TMP)/docbook-$(DISTRO)-ns-$(ZIPVER)/VERSION
 
 # change distro name
-
-
-
-
-
-
-
-
 
 	sed -i"" "s/^\(.*\)<xsl:param name=\"DistroName\">docbook-xsl<\/xsl:param>$$/\1<xsl:param name=\"DistroName\">docbook-xsl-ns<\/xsl:param>/" \
 	  $(TMP)/docbook-$(DISTRO)-ns-$(ZIPVER)/VERSION
