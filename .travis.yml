@@ -49,7 +49,7 @@ before_deploy:
 - git config --global user.name "Travis CI"
 - export GIT_TAG=snapshot/$(date -u "+%Y-%m-%d")-$TRAVIS_BUILD_NUMBER
 - git tag $GIT_TAG -a -m "Generated tag from TravisCI build $TRAVIS_BUILD_NUMBER"
-- git push https://$GITHUBTOKEN@github.com/docbook/xslt10-stylesheets $GIT_TAG
+- git push https://$GITHUBTOKEN@github.com/ndw/xslt10-stylesheets $GIT_TAG
 
 notifications:
   email:
