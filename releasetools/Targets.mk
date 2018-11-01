@@ -39,7 +39,9 @@ ifeq ($(PDF_MAKER),dblatex)
 	&& $(DBLATEX) $(DBLATEX_FLAGS) \
 	  -p $(DBX_STYLE) \
 	  -o $@ \
-	  RELEASE-NOTES-STRIPPED-TMP.xml
+	  RELEASE-NOTES-STRIPPED-TMP.xml > /tmp/dblatex-errs.log 2>&1
+	echo "..."
+	tail -10 /tmp/dblatex-errs.log
 	$(RM) RELEASE-NOTES-STRIPPED-TMP.xml
 	$(RM) RELEASE-NOTES-TMP.xml
 endif
