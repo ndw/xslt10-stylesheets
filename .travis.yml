@@ -29,9 +29,11 @@ install:
 
 script:
 - make
-- make check
 - make dist
 - export VERSION=$(make version)
+
+# - make check
+
 
 after_success:
 - |
@@ -65,5 +67,6 @@ deploy:
   - dist/docbook-xsl-nons-$VERSION.zip
   - dist/docbook-xsl-doc-$VERSION.zip
   on:
+    tags: true
     repo: ndw/xslt10-stylesheets
     branch: travis
