@@ -66,6 +66,7 @@ deploy:
   - dist/docbook-xsl-$VERSION.zip
   - dist/docbook-xsl-nons-$VERSION.zip
   - dist/docbook-xsl-doc-$VERSION.zip
+  skip_cleanup: true
   on:
     tags: true
     all_branches: true
