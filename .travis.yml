@@ -68,5 +68,4 @@ deploy:
   - dist/docbook-xsl-doc-$VERSION.zip
   on:
     tags: true
-    repo: ndw/xslt10-stylesheets
-    branch: travis
+    all_branches: true
