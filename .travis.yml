@@ -35,7 +35,7 @@ script:
 
 after_success:
 - |
-  if [ "$TRAVIS_REPO_SLUG" = "docbook/xslt10-stylesheets" -a \
+  if [ "$TRAVIS_REPO_SLUG" = "ndw/xslt10-stylesheets" -a \
        "$TRAVIS_PULL_REQUEST" = "false" ]; then
     export GH_TOKEN
     .travis/publish-release.sh
@@ -58,19 +58,12 @@ notifications:
 
 deploy:
   provider: releases
-  prerelease: true
   api_key:
-    secure: C3XlJYP4Fr5bkZRTZWAEZiAi4FxxFWE8oWTwYEH0aBj5Duc+l/M4WUWlI7kuRvf4nJVYjJ4Ano55M6KGlXU1Nqrkzza/y9MFdWvvlDROhgwftmf4kiVBKSu/Db13jipne7hDu7N32aBA6jhS6f8hTUTYXrp1aojeY04czrBtzKjAvWjwBpZlPMhaQcxxg1ta18dLA2oo+k6XvNXIvZBVxumk6LlGWNmXPig5KTyntRJtFak5MplyPEQ6hYIq5HFS5nY3WOMIPW+io0mmr1ESr//98Z9Q6N0Pr5PCQadF0eOOlSYkY3ggEKT7v+g+uFrGnUHXnhcWmydy798RRr/ixbMd5jVtOWIRuGp7oQud1P2oY0ICPiF6S0a24alpELpnjGtqnZ4RH2jNQZhRgD71466Og5ZSsN09+HzXghY0KSUw65emgZGYN6LU0NgL+13PIje5Ow2E236wkDmlnxIkXvpr/UAQlyXR6QWHSG2gzgSn4zoHSHWRDc/5Jhgd0WDEnMV5U1SnC8w/bObjTvNhtIkXTDdMWLGQDR5Me4qg4IT0FtnpMai3aOvnRyMyfNy/yAY5jEX8bBwVDwXYxxIUz2O88zyxTWgZVM2OvUeVi9xKjtfskp9pwFs3xEB+Q8T8HFYAKmcVxxsW9U2C1Zy6Q2eKDrjXx/bn/27GecQa26k=
+    secure: Ihp3feWeNFpTF8H3x3eQwusYAlXptDATl9gr/MTtfJUbtLtTMKSQSeYvg4lWjRI5mg25xS2GVwMV8QZqJe5+Ye2HlCT3b3eKUWSCpAbJHm65bpmZTawwphG+QXEnXBV9sXGiD+0ZNxFltzTv2aJIy/ZAmyo5Lba6+uRgQ622RGGaLRYRJUWTCcZpw8WOwfIAycHPk0axDyM1nswVNI3bImqFl/dTm7kVoNAM8/DLGC+dUNpXMGfREbZ5lRcdONFz3inH0DOaxCpMe5O7Dtw9awqsjS30Ejf6/W+yRui+2guW1AXdgjpmNjsZiCuiLx0zmlQCbvd88xFeSBP0W4GXE5Pdzgcn0jmU9DqB4H2161uwP0DRcrsqu5kI2Eg77GKUwFFEdzW1Xe6pcV8u1EY+juy1ozjmnQBgpgciWaqh5g0IZaUKcLvnHMCJgjTT7q/SSPVQqFUdyGW/hYJSyN2KWO2rk84ARhC5UnqDqje+m7/w84hmve9R6HsMnh14icMJvAt36ERvpT+yossJ7x9V7RStetmcXI8CGW05oFt5tnbftBtnb8kLB87SiWxxRzbYvWrEPEbfOrugt5GlYOG1gyMJpA3nPogzGvJNZx+l8Aju7w1X4x+ZAWdU8E+m/VEMqqaP1NBtpgpeDBH+7QPlDEa1WbErkIX5ya9vcNcZXWo=
   file:
-  - dist/docbook-xsl-$VERSION.tar.bz2
-  - dist/docbook-xsl-$VERSION.tar.gz
   - dist/docbook-xsl-$VERSION.zip
-  - dist/docbook-xsl-nons-$VERSION.tar.bz2
-  - dist/docbook-xsl-nons-$VERSION.tar.gz
   - dist/docbook-xsl-nons-$VERSION.zip
-  - dist/docbook-xsl-doc-$VERSION.tar.bz2
-  - dist/docbook-xsl-doc-$VERSION.tar.gz
   - dist/docbook-xsl-doc-$VERSION.zip
   on:
-    repo: docbook/xslt10-stylesheets
-    branch: master
+    repo: ndw/xslt10-stylesheets
+    branch: travis
