@@ -30,11 +30,9 @@ install:
 
 script:
 - make
+- make check
 - make dist
 - export VERSION=$(make version)
-
-# - make check
-
 
 after_success:
 - |
